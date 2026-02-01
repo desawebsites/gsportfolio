@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesoft - Innovación, Tecnología y Estrategia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Salesforce+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sf-blue: #0176D3;
+            --sf-blue-dark: #014486;
+            --sf-teal: #06A59A;
+            --sf-green: #3BA755;
+            --sf-orange: #FF9A3C;
+            --white: #FFFFFF;
+            --gray-10: #FAFAF9;
+            --gray-20: #F3F2F2;
+            --gray-30: #ECEBEA;
+            --gray-40: #C9C7C5;
+            --gray-60: #706E6B;
+            --gray-80: #3E3E3C;
+            --gray-100: #181818;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Salesforce Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--gray-100);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-30);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-80);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--sf-blue);
+        }
+
+        .nav-cta {
+            background: var(--sf-blue);
+            color: var(--white) !important;
+            padding: 0.625rem 1.25rem !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: var(--sf-blue-dark);
+            color: var(--white) !important;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--gray-80);
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            padding-top: 70px;
+            background: linear-gradient(135deg, var(--gray-10) 0%, var(--white) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--gray-100);
+        }
+
+        .hero-text .highlight {
+            color: var(--sf-blue);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray-60);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--sf-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--sf-blue-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--sf-blue);
+            border-color: var(--sf-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sf-blue);
+            color: var(--white);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sf-blue);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-60);
+            margin-top: 0.5rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background: var(--gray-10);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(1, 118, 211, 0.1);
+            color: var(--sf-blue);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-100);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-60);
+            line-height: 1.7;
+        }
+
+        /* Method Cards */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .method-card {
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--sf-blue);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .method-card:hover {
+            border-color: var(--sf-blue);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .method-card:hover::before {
+            opacity: 1;
+        }
+
+        .method-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sf-blue);
+            margin-bottom: 1rem;
+        }
+
+        .method-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray-100);
+        }
+
+        .method-card p {
+            color: var(--gray-60);
+            line-height: 1.7;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: var(--gray-10);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+
+        .tech-item:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tech-item img {
+            max-height: 40px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .product-header {
+            background: var(--sf-blue);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .product-icon {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .product-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .product-tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .product-body {
+            padding: 2rem;
+        }
+
+        .product-body p {
+            color: var(--gray-60);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            background: var(--gray-10);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin: 1rem 0;
+        }
+
+        .product-features strong {
+            color: var(--gray-80);
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--sf-blue);
+            margin: 1rem 0;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sf-blue);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: gap 0.2s;
+        }
+
+        .product-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--sf-blue);
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .service-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--sf-blue);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-100);
+        }
+
+        .service-card p {
+            color: var(--gray-60);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Clients */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+        }
+
+        .client-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: var(--gray-10);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+            min-height: 100px;
+        }
+
+        .client-logo:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .client-logo:hover img {
+            opacity: 1;
+        }
+
+        /* Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-30);
+            border-radius: var(--radius-md);
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: var(--sf-blue);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(1, 118, 211, 0.1);
+            border-radius: 50%;
+            font-size: 2rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray-100);
+        }
+
+        .value-card p {
+            color: var(--gray-60);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--sf-blue) 0%, var(--sf-blue-dark) 100%);
+            border-radius: var(--radius-lg);
+            padding: 4rem 3rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: var(--white);
+            color: var(--sf-blue);
+        }
+
+        .btn-light:hover {
+            background: var(--gray-10);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--sf-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-100);
+            color: var(--gray-40);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-40);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-80);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                box-shadow: var(--shadow-md);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s;
+                pointer-events: none;
+                align-items: stretch;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+                width: 100%;
+                display: block;
+            }
+
+            .nav-cta {
+                border-radius: 0 !important;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .products-grid,
+            .services-grid,
+            .method-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 2rem;
+            }
+
+            .cta-section {
+                padding: 3rem 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="gesoft.png" alt="Gesoft">
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#metodo">Método</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transformamos <span class="highlight">tu negocio</span> con tecnología innovadora</h1>
+                    <p>Más de 30 años creando soluciones tecnológicas que impulsan el crecimiento de empresas líderes en España.</p>
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn btn-primary">Solicitar Demo</a>
+                        <a href="#productos" class="btn btn-secondary">Ver Productos</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Proyectos completados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Compromiso calidad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Equipo trabajando">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodo" class="section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">Nuestra Metodología</span>
+                <h2 class="section-title">El Método Gesoft</h2>
+                <p class="section-subtitle">Un proceso probado que garantiza resultados excepcionales en cada proyecto, combinando agilidad con calidad empresarial.</p>
+            </div>
+
+            <div class="method-grid">
+                <div class="method-card fade-in">
+                    <div class="method-number">01</div>
+                    <h3>Definimos</h3>
+                    <p>Entendemos y documentamos las necesidades y requerimientos de todos los actores del proyecto para construir una base sólida.</p>
+                </div>
+
+                <div class="method-card fade-in">
+                    <div class="method-number">02</div>
+                    <h3>Diseñamos</h3>
+                    <p>Creamos productos visualmente atractivos y fáciles de utilizar. Todo se construye alrededor del usuario final.</p>
+                </div>
+
+                <div class="method-card fade-in">
+                    <div class="method-number">03</div>
+                    <h3>Construimos</h3>
+                    <p>Aplicamos desarrollo Agile para conseguir los mejores resultados, reduciendo riesgos y mejorando la eficiencia.</p>
+                </div>
+
+                <div class="method-card fade-in">
+                    <div class="method-number">04</div>
+                    <h3>Iteramos</h3>
+                    <p>El proceso nunca termina. Evaluamos resultados continuamente y definimos las próximas iteraciones del proyecto.</p>
+                </div>
+            </div>
+
+            <div class="tech-stack fade-in">
+                <h3 style="text-align: center; font-size: 1.5rem; font-weight: 600; color: var(--gray-100); margin-bottom: 0.5rem;">Tecnologías que Dominamos</h3>
+                <p style="text-align: center; color: var(--gray-60); margin-bottom: 2rem;">Stack tecnológico moderno y robusto</p>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <img src="nodejs.png" alt="Node.js">
+                    </div>
+                    <div class="tech-item">
+                        <img src="python.jpg" alt="Python">
+                    </div>
+                    <div class="tech-item">
+                        <img src="php.png" alt="PHP">
+                    </div>
+                    <div class="tech-item">
+                        <img src="mysql.png" alt="MySQL">
+                    </div>
+                    <div class="tech-item">
+                        <img src="oracle.png" alt="Oracle">
+                    </div>
+                    <div class="tech-item">
+                        <img src="suidcode.png" alt="SUID">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">Nuestras Soluciones</span>
+                <h2 class="section-title">Productos Destacados</h2>
+                <p class="section-subtitle">Plataformas robustas y escalables diseñadas para resolver problemas empresariales reales con tecnología de vanguardia.</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-header">
+                        <img src="cpresencial.png" alt="cPresencial" class="product-icon">
+                        <h3>cPresencial</h3>
+                        <p class="product-tagline">Control de Presencia Laboral</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Software de control de presencia para gestionar horarios, jornadas y actividades de trabajadores. Cumple con el Real Decreto-ley 8/2019.</p>
+                        <div class="product-features">
+                            <strong>Características clave:</strong> APP móvil nativa, panel de control web, gestión de vacaciones, fichajes por ubicación, integración con dispositivos biométricos.
+                        </div>
+                        <p class="product-price">Desde 2,15€/mes por usuario</p>
+                        <a href="https://cpresencial.es" class="product-link">
+                            Más información →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-header">
+                        <img src="votonline.png" alt="VotOnline" class="product-icon">
+                        <h3>VotOnline</h3>
+                        <p class="product-tagline">Votaciones Online Seguras</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Sistema independiente y seguro para realizar votaciones completamente online. Perfecto para partidos políticos, sindicatos, asociaciones y organizaciones.</p>
+                        <div class="product-features">
+                            <strong>Características clave:</strong> Votaciones seguras con certificado SSL, app móvil disponible, encuestas personalizables, resultados en tiempo real.
+                        </div>
+                        <a href="https://votonline.es" class="product-link">
+                            Más información →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-header">
+                        <img src="moviljet.png" alt="MovilJet" class="product-icon">
+                        <h3>MovilJet</h3>
+                        <p class="product-tagline">Envío Masivo de SMS y Email</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Software de envío masivo de SMS, email y correo ordinario desde un único panel de control. Estrategia de marketing económica y muy efectiva.</p>
+                        <div class="product-features">
+                            <strong>Características clave:</strong> API PHP para integración, envíos programados, remitente personalizable, reportes en tiempo real, rutas seguras.
+                        </div>
+                        <p class="product-price">Desde 12€/mes</p>
+                        <a href="https://moviljet.com" class="product-link">
+                            Más información →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">Lo que hacemos</span>
+                <h2 class="section-title">Servicios Especializados</h2>
+                <p class="section-subtitle">Soluciones completas que cubren todo el ciclo de vida de tu proyecto tecnológico, desde la estrategia hasta el mantenimiento.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3588/3588592.png" alt="Innovación" class="service-icon">
+                    <h3>Asesoría en Innovación y Estrategia</h3>
+                    <p>Definimos tu estrategia tecnológica con éxito en un entorno de innovación continua, basados en 30 años de experiencia.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="Web" class="service-icon">
+                    <h3>Desarrollo Web</h3>
+                    <p>Aplicaciones web a medida del front al back, diseñadas específicamente para potenciar tu negocio.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2942/2942156.png" alt="App" class="service-icon">
+                    <h3>Desarrollo de Apps</h3>
+                    <p>Apps móviles de cinco estrellas que entienden tus necesidades y las de tus usuarios finales.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3426/3426653.png" alt="UX/UI" class="service-icon">
+                    <h3>Diseño UX/UI</h3>
+                    <p>Comunicamos las cualidades de tus productos a través de diseños que combinan estética y funcionalidad.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="Producto" class="service-icon">
+                    <h3>Diseño de Productos Digitales</h3>
+                    <p>Productos digitales que tus usuarios amarán, diseñados pensando en la experiencia del usuario.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Cloud" class="service-icon">
+                    <h3>Cloud & DevOps</h3>
+                    <p>Infraestructura escalable y preparada para el éxito con ingenieros DevOps de élite.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3045/3045657.png" alt="Calidad" class="service-icon">
+                    <h3>Control de Calidad</h3>
+                    <p>Metodología integral de calidad que va mucho más allá del testing tradicional de software.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1705/1705312.png" alt="Protección" class="service-icon">
+                    <h3>Protección de Datos y DPD</h3>
+                    <p>Cumplimiento normativo RGPD completo. Servicio de externalización de Delegado de Protección de Datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clientes">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">Confían en nosotros</span>
+                <h2 class="section-title">Nuestros Clientes</h2>
+                <p class="section-subtitle">Empresas líderes que han confiado en nuestra experiencia y profesionalidad para sus proyectos tecnológicos.</p>
+            </div>
+
+            <div class="clients-grid fade-in">
+                <div class="client-logo">
+                    <img src="maier.png" alt="Maier">
+                </div>
+                <div class="client-logo">
+                    <img src="avast.png" alt="Avast">
+                </div>
+                <div class="client-logo">
+                    <img src="global_radio_system.png" alt="Global Radio System">
+                </div>
+                <div class="client-logo">
+                    <img src="the_ethailers.png" alt="The Etailers">
+                </div>
+                <div class="client-logo">
+                    <img src="iu.png" alt="Izquierda Unida">
+                </div>
+                <div class="client-logo">
+                    <img src="circulum.png" alt="Circulum">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">Por qué elegirnos</span>
+                <h2 class="section-title">Nuestros Valores</h2>
+                <p class="section-subtitle">Tres pilares fundamentales que definen nuestra forma de trabajar y garantizan el éxito de cada proyecto.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">⚡</div>
+                    <h3>Profesionalidad</h3>
+                    <p>30 años de experiencia y atención al detalle garantizan proyectos de alta calidad que cumplen plazos al más alto nivel.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🎯</div>
+                    <h3>Calidad</h3>
+                    <p>Metodología sólida y equipo profesional que aseguran la satisfacción del cliente y bajo nivel de incidencias.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🚀</div>
+                    <h3>Experiencia</h3>
+                    <p>Equipo con más de 30 años aplicando las últimas tecnologías con las mejores prácticas del mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <div class="cta-section fade-in">
+                <h2>¿Listo para transformar tu negocio?</h2>
+                <p>Estás a punto de dar un gran paso en el proceso evolutivo de tu empresa. Trabaja con nosotros.</p>
+                <div class="cta-buttons">
+                    <a href="tel:659866015" class="btn btn-light">
+                        📞 Llamar: 659 866 015
+                    </a>
+                    <a href="mailto:comercial@gesoft.es" class="btn btn-outline">
+                        ✉️ Enviar Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="gesoft.png" alt="Gesoft" class="footer-logo">
+                    <p>Innovación, Tecnología y Estrategia</p>
+                    <p>Más de 30 años de experiencia transformando negocios</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Dirección</h4>
+                    <p>Plaza de Compostela, 23 2º Dcha</p>
+                    <p>36201 Vigo, Pontevedra</p>
+                    <p>España</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:administracion@gesoft.es">administracion@gesoft.es</a>
+                    <a href="mailto:soporte@gesoft.es">soporte@gesoft.es</a>
+                    <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a>
+                    <a href="tel:659866015">659 866 015</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="https://gesoft.es/index.php/aviso-legal/">Aviso Legal</a>
+                    <a href="https://gesoft.es/index.php/politica-de-privacidad/">Política de Privacidad</a>
+                    <a href="https://gesoft.es/index.php/politica-de-privacidad/">Política de Cookies</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GESOFT | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
