@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="387" height="38" viewBox="0 0 387 38" role="img" aria-label="SUIDCode logo">
+  <defs>
+    <style>
+      .brand-green { fill: #61B33F; }
+      .brand-dark { fill: #222222; }
+      .logo-sans { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Hexagon icon (left) -->
+  <g transform="translate(8,1)">
+    <!-- hexagon -->
+    <polygon class="brand-green" points="18,2 34,10 34,26 18,34 2,26 2,10" />
+    <!-- stylized 'code/S' inside the hexagon -->
+    <path d="M10.5,11
+             C13.5,6 24.5,6 26,11
+             C27.5,16 18,17 18,20
+             C18,23 27.5,24 26,29
+             C24.5,34 13.5,34 10.5,29"
+          fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(60,26)">
+    <!-- "SUID" in dark -->
+    <text x="0" y="0" class="logo-sans" font-size="18" fill="#222222">SUID</text>
+    <!-- "Code" in green, slightly lighter weight -->
+    <text x="82" y="0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="18" fill="#61B33F">Code</text>
+  </g>
+</svg>
