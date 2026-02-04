@@ -360,8 +360,8 @@
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
@@ -369,19 +369,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 2.5rem 1.5rem;
             background: var(--gray-10);
             border-radius: var(--radius-sm);
             transition: all 0.2s;
+            min-height: 180px;
         }
 
         .tech-item:hover {
             background: var(--white);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
         }
 
         .tech-item img {
-            max-height: 50px;
+            max-height: 120px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -497,10 +499,14 @@
         .service-card {
             background: var(--white);
             border: 1px solid var(--gray-30);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.2s;
+            border-radius: var(--radius-lg);
+            padding: 0;
+            transition: all 0.3s;
             position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::before {
@@ -508,28 +514,58 @@
             position: absolute;
             left: 0;
             top: 0;
+            right: 0;
             bottom: 0;
-            width: 4px;
-            background: var(--sf-blue);
-            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            background: linear-gradient(135deg, rgba(1, 118, 211, 0.05) 0%, rgba(6, 165, 154, 0.05) 100%);
             opacity: 0;
-            transition: opacity 0.2s;
+            transition: opacity 0.3s;
         }
 
         .service-card:hover {
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             border-color: var(--sf-blue);
+            transform: translateY(-4px);
         }
 
         .service-card:hover::before {
             opacity: 1;
         }
 
+        .service-icon-wrapper {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
         .service-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1rem;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.05);
+        }
+
+        .service-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card h3 {
@@ -543,6 +579,7 @@
             color: var(--gray-60);
             line-height: 1.6;
             font-size: 0.95rem;
+            flex: 1;
         }
 
         /* Clients */
@@ -807,6 +844,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
             .clients-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
@@ -839,8 +881,8 @@
 
         /* Animations */
         .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.6s ease-out;
         }
 
@@ -958,7 +1000,7 @@
                         <img src="img/oracle.png" alt="Oracle">
                     </div>
                     <div class="tech-item">
-                        <img src="img/suidcode.png" alt="SUID">
+                        <img src="img/suidcode-hex.png" alt="SUID">
                     </div>
                 </div>
             </div>
@@ -985,10 +1027,10 @@
                         <div class="product-features">
                             <strong>Características clave:</strong> APP móvil nativa, panel de control web, gestión de vacaciones, fichajes por ubicación, integración con dispositivos biométricos.
                         </div>
-                        <p class="product-price">Desde 2,15€/mes por usuario</p>
+                        <!--p class="product-price">Desde 2,15€/mes por usuario</p>
                         <a href="https://cpresencial.es" class="product-link">
                             Más información →
-                        </a>
+                        </a-->
                     </div>
                 </div>
 
@@ -1003,9 +1045,9 @@
                         <div class="product-features">
                             <strong>Características clave:</strong> Votaciones seguras con certificado SSL, app móvil disponible, encuestas personalizables, resultados en tiempo real.
                         </div>
-                        <a href="https://votonline.es" class="product-link">
+                        <!--a href="https://votonline.es" class="product-link">
                             Más información →
-                        </a>
+                        </a-->
                     </div>
                 </div>
 
@@ -1020,10 +1062,44 @@
                         <div class="product-features">
                             <strong>Características clave:</strong> API PHP para integración, envíos programados, remitente personalizable, reportes en tiempo real, rutas seguras.
                         </div>
-                        <p class="product-price">Desde 12€/mes</p>
+                        <!-- class="product-price">Desde 12€/mes</p>
                         <a href="https://moviljet.com" class="product-link">
                             Más información →
-                        </a>
+                        </a-->
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-header">
+                        <img src="img/mibms.png" alt="miBMS" class="product-icon">
+                        <h3>miBMS</h3>
+                        <p class="product-tagline">Tu gestor de negocio empresarial</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Software completo de gestión empresarial con facturación a clientes, desarrollo web, marketing online y chat privado. Gestión de negocio, contabilidad y clientes de forma sencilla y rápida.</p>
+                        <div class="product-features">
+                            <strong>Características clave:</strong> Gestión de clientes y proveedores, facturación e impuestos, oportunidades comerciales, comunicaciones (email/SMS), diseño web integrado, APP móvil, control financiero completo.
+                        </div>
+                        <!--p class="product-price">Desde 12€/mes</p>
+                        <a href="https://gesoft.es/index.php/mibms/" class="product-link">
+                            Más información →
+                        </a-->
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-header">
+                        <img src="img/suidcode.svg" alt="SUID" class="product-icon">
+                        <h3>SUID</h3>
+                        <p class="product-tagline">Entorno de Programación Data-Driven</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Entorno de programación innovador para aplicaciones de gestión web. Motor de órdenes internas que facilita el enlace entre navegador y servidor con arquitectura Data-Driven extremadamente versátil, rápida y eficaz.</p>
+                        <div class="product-features">
+                            <strong>Características clave:</strong> Motor de órdenes interpretativo, arquitectura Data-Driven, rendimiento superior, enlace con motor de datos y servidor, ficheros de configuración dinámicos, ideal para aplicaciones de gestión basadas en navegador.
+                        </div>
+                        <!--a href="https://suidcode.com" class="product-link">
+                            Más información →
+                        </a-->
                     </div>
                 </div>
             </div>
@@ -1040,51 +1116,83 @@
 
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3588/3588592.png" alt="Innovación" class="service-icon">
-                    <h3>Asesoría en Innovación y Estrategia</h3>
-                    <p>Definimos tu estrategia tecnológica con éxito en un entorno de innovación continua, basados en 30 años de experiencia.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop&q=80" alt="Innovación" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Asesoría en Innovación y Estrategia</h3>
+                        <p>Definimos tu estrategia tecnológica con éxito en un entorno de innovación continua, basados en 30 años de experiencia.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="Web" class="service-icon">
-                    <h3>Desarrollo Web</h3>
-                    <p>Aplicaciones web a medida del front al back, diseñadas específicamente para potenciar tu negocio.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop&q=80" alt="Web" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Desarrollo Web</h3>
+                        <p>Aplicaciones web a medida del front al back, diseñadas específicamente para potenciar tu negocio.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2942/2942156.png" alt="App" class="service-icon">
-                    <h3>Desarrollo de Apps</h3>
-                    <p>Apps móviles de cinco estrellas que entienden tus necesidades y las de tus usuarios finales.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=400&fit=crop&q=80" alt="App" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Desarrollo de Apps</h3>
+                        <p>Apps móviles de cinco estrellas que entienden tus necesidades y las de tus usuarios finales.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3426/3426653.png" alt="UX/UI" class="service-icon">
-                    <h3>Diseño UX/UI</h3>
-                    <p>Comunicamos las cualidades de tus productos a través de diseños que combinan estética y funcionalidad.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop&q=80" alt="UX/UI" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Diseño UX/UI</h3>
+                        <p>Comunicamos las cualidades de tus productos a través de diseños que combinan estética y funcionalidad.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="Producto" class="service-icon">
-                    <h3>Diseño de Productos Digitales</h3>
-                    <p>Productos digitales que tus usuarios amarán, diseñados pensando en la experiencia del usuario.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=400&fit=crop&q=80" alt="Producto" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Diseño de Productos Digitales</h3>
+                        <p>Productos digitales que tus usuarios amarán, diseñados pensando en la experiencia del usuario.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Cloud" class="service-icon">
-                    <h3>Cloud & DevOps</h3>
-                    <p>Infraestructura escalable y preparada para el éxito con ingenieros DevOps de élite.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=400&fit=crop&q=80" alt="Cloud" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cloud & DevOps</h3>
+                        <p>Infraestructura escalable y preparada para el éxito con ingenieros DevOps de élite.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3045/3045657.png" alt="Calidad" class="service-icon">
-                    <h3>Control de Calidad</h3>
-                    <p>Metodología integral de calidad que va mucho más allá del testing tradicional de software.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop&q=80" alt="Calidad" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Control de Calidad</h3>
+                        <p>Metodología integral de calidad que va mucho más allá del testing tradicional de software.</p>
+                    </div>
                 </div>
 
                 <div class="service-card fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1705/1705312.png" alt="Protección" class="service-icon">
-                    <h3>Protección de Datos y DPD</h3>
-                    <p>Cumplimiento normativo RGPD completo. Servicio de externalización de Delegado de Protección de Datos.</p>
+                    <div class="service-icon-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop&q=80" alt="Protección" class="service-icon">
+                    </div>
+                    <div class="service-content">
+                        <h3>Protección de Datos y DPD</h3>
+                        <p>Cumplimiento normativo RGPD completo. Servicio de externalización de Delegado de Protección de Datos.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1166,7 +1274,7 @@
                     <a href="tel:659866015" class="btn btn-light">
                         📞 Llamar: 659 866 015
                     </a>
-                    <a href="mailto:comercial@gesoft.es" class="btn btn-outline">
+                    <a href="/cdn-cgi/l/email-protection#d1b2bebcb4a3b2b8b0bd91b6b4a2beb7a5ffb4a2" class="btn btn-outline">
                         ✉️ Enviar Email
                     </a>
                 </div>
@@ -1174,13 +1282,14 @@
         </div>
     </section>
 
-    <footer>
+   <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <img src="img/gesoft.png" alt="Gesoft" class="footer-logo">
                     <p>Innovación, Tecnología y Estrategia</p>
                     <p>Más de 30 años de experiencia transformando negocios</p>
+                    <p>soporte@gesoft.es</p>
                 </div>
 
                 <div class="footer-section">
@@ -1188,13 +1297,16 @@
                     <p>Plaza de Compostela, 23 2º Dcha</p>
                     <p>36201 Vigo, Pontevedra</p>
                     <p>España</p>
+                    <p>administracion@gesoft.es</p>
                 </div>
+
+
 
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <a href="mailto:administracion@gesoft.es">administracion@gesoft.es</a>
-                    <a href="mailto:soporte@gesoft.es">soporte@gesoft.es</a>
-                    <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a>
+                    <a href="/cdn-cgi/l/email-protection#2a4b4e47434443595e584b494345446a4d4f59454c5e044f59"><span class="__cf_email__" data-cfemail="29484d444047405a5d5b484a404647694e4c5a464f5d074c5a">comercial@gesoft.es</span></a>
+                    <!-- a href="/cdn-cgi/l/email-protection#a4d7cbd4cbd6d0c1e4c3c1d7cbc2d08ac1d7"><span class="__cf_email__" data-cfemail="e0938f908f929485a08785938f8694ce8593">soporte@gesoft.es</span></a>
+                    <a href="/cdn-cgi/l/email-protection#abc8c4c6ced9c8c2cac7ebccced8c4cddf85ced8"><span class="__cf_email__" data-cfemail="284b47454d5a4b414944684f4d5b474e5c064d5b">dpd@gesoft.es</span></a-->
                     <a href="tel:659866015">659 866 015</a>
                 </div>
 
@@ -1203,6 +1315,8 @@
                     <a href="https://gesoft.es/index.php/aviso-legal/">Aviso Legal</a>
                     <a href="https://gesoft.es/index.php/politica-de-privacidad/">Política de Privacidad</a>
                     <a href="https://gesoft.es/index.php/politica-de-privacidad/">Política de Cookies</a>
+                    <a href="/cdn-cgi/l/email-protection#2a4b4e47434443595e584b494345446a4d4f59454c5e044f59"><span class="__cf_email__" data-cfemail="29484d444047405a5d5b484a404647694e4c5a464f5d074c5a">dpd@gesoft.es</span></a>
+                    
                 </div>
             </div>
 
@@ -1212,7 +1326,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -1256,16 +1370,15 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Smooth scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
