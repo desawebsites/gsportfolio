@@ -1,0 +1,60 @@
+nano .gitignore
+```
+
+Pega esto:
+```
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/logs/
+*.msmtp.log
+
+# Cache
+/cache/
+/tmp/
+*.cache
+
+# Uploads
+/uploads/
+/storage/
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Composer
+composer.lock
+composer.phar
+
+# NPM
+package-lock.json
+yarn.lock
+
+# Build
+/dist/
+/build/
+
+# PHP
+*.php~
+.phpunit.result.cache
+__drafts__
+.commands.md
