@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - Gesoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Salesforce+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sf-blue: #0176D3;
+            --sf-blue-dark: #014486;
+            --white: #FFFFFF;
+            --gray-10: #FAFAF9;
+            --gray-20: #F3F2F2;
+            --gray-30: #ECEBEA;
+            --gray-40: #C9C7C5;
+            --gray-60: #706E6B;
+            --gray-80: #3E3E3C;
+            --gray-100: #181818;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Salesforce Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--gray-100);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-30);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-80);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--sf-blue);
+        }
+
+        .nav-cta {
+            background: var(--sf-blue);
+            color: var(--white) !important;
+            padding: 0.625rem 1.25rem !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: var(--sf-blue-dark);
+        }
+
+        /* Legal Content */
+        .legal-content {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--gray-10) 0%, var(--white) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-header p {
+            color: var(--gray-60);
+            font-size: 1rem;
+        }
+
+        .legal-body {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-body h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-100);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sf-blue);
+        }
+
+        .legal-body h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-80);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .legal-body p {
+            color: var(--gray-60);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .legal-body ul, .legal-body ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gray-60);
+        }
+
+        .legal-body li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .legal-body strong {
+            color: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .legal-body a {
+            color: var(--sf-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .legal-body a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: var(--gray-10);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--sf-blue);
+            margin: 1.5rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-100);
+            color: var(--gray-40);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-40);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-80);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .legal-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/gesoft.png" alt="Gesoft"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#contacto" class="nav-cta">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="legal-content">
+        <div class="container">
+            <div class="legal-header">
+                <h1>Aviso Legal</h1>
+                <p>Última actualización: Febrero 2025</p>
+            </div>
+
+            <div class="legal-body">
+                <h2>1. Datos Identificativos</h2>
+                <div class="info-box">
+                    <p><strong>Razón Social:</strong> GESOFT - Gestión de Software S.L.</p>
+                    <p><strong>CIF:</strong> B36483320</p>
+                    <p><strong>Domicilio:</strong> Plaza de Compostela, 23 2º Dcha, 36201 Vigo, Pontevedra, España</p>
+                    <p><strong>Email:</strong> <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a></p>
+                    <p><strong>Teléfono:</strong> <a href="tel:659866015">659 866 015</a></p>
+                </div>
+
+                <h2>2. Objeto</h2>
+                <p>El presente aviso legal regula el uso del sitio web <strong>gesoft.es</strong> (en adelante, el "Sitio Web"), del que es titular GESOFT - Gestión de Software S.L.</p>
+                <p>La navegación por el Sitio Web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+
+                <h2>3. Condiciones de Uso</h2>
+                <h3>3.1. Carácter Obligatorio</h3>
+                <p>El uso del Sitio Web implica la aceptación expresa y sin reservas de las presentes condiciones generales. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios ofrecidos y a no emplearlos para:</p>
+                <ul>
+                    <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público</li>
+                    <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del terrorismo o atentatorio contra los derechos humanos</li>
+                    <li>Provocar daños en los sistemas físicos y lógicos del Sitio Web, de sus proveedores o de terceros</li>
+                    <li>Introducir o difundir virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar daños</li>
+                </ul>
+
+                <h3>3.2. Modificaciones</h3>
+                <p>GESOFT se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados.</p>
+
+                <h2>4. Propiedad Intelectual e Industrial</h2>
+                <p>Todos los contenidos del Sitio Web, incluyendo, sin carácter limitativo, textos, fotografías, gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de GESOFT o de terceros, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente en materia de propiedad intelectual sobre los mismos.</p>
+
+                <h3>4.1. Marcas y Logos</h3>
+                <p>Las marcas, nombres comerciales o signos distintivos son titularidad de GESOFT o terceros, sin que pueda entenderse que el acceso al Sitio Web atribuya ningún derecho sobre las citadas marcas, nombres comerciales y/o signos distintivos.</p>
+
+                <h3>4.2. Uso Autorizado</h3>
+                <p>Queda prohibida la reproducción, distribución, comunicación pública y transformación de los contenidos del Sitio Web sin la autorización expresa y por escrito de GESOFT. El usuario únicamente está autorizado a:</p>
+                <ul>
+                    <li>Visualizar el contenido en pantalla</li>
+                    <li>Imprimir, copiar o almacenar el contenido en el disco duro de su ordenador siempre que sea para uso personal y privado</li>
+                </ul>
+
+                <h2>5. Exclusión de Responsabilidad</h2>
+                <h3>5.1. Contenidos</h3>
+                <p>GESOFT no se hace responsable de la legalidad de otros sitios web de terceros desde los que pueda accederse al Sitio Web o a los que se pueda acceder desde el mismo.</p>
+                <p>GESOFT excluye cualquier responsabilidad por los daños y perjuicios de toda naturaleza que pudieran deberse a la falta de disponibilidad o de continuidad del funcionamiento del Sitio Web.</p>
+
+                <h3>5.2. Virus y Seguridad</h3>
+                <p>GESOFT no garantiza la ausencia de virus ni de otros elementos en el Sitio Web introducidos por terceros ajenos a GESOFT que puedan producir alteraciones en los sistemas físicos o lógicos del usuario o en los documentos electrónicos y ficheros almacenados en sus sistemas.</p>
+
+                <h3>5.3. Enlaces</h3>
+                <p>Los enlaces contenidos en el Sitio Web pueden dirigir a contenidos web de terceros. GESOFT no asume ninguna responsabilidad por el contenido, informaciones o servicios que pudieran aparecer en dichos sitios, que tendrán exclusivamente carácter informativo y que en ningún caso implican relación alguna entre GESOFT y las personas o entidades titulares de tales contenidos o titulares de los sitios donde se encuentren.</p>
+
+                <h2>6. Protección de Datos</h2>
+                <p>Para información sobre el tratamiento de sus datos personales, consulte nuestra <a href="politica-privacidad.html">Política de Privacidad</a>.</p>
+                <p><strong>Delegado de Protección de Datos:</strong> <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a></p>
+
+                <h2>7. Legislación Aplicable y Jurisdicción</h2>
+                <p>Las presentes condiciones generales se rigen por la legislación española. Para la resolución de cualquier controversia relativa a este Sitio Web, GESOFT y el usuario acuerdan someterse a los Juzgados y Tribunales de Vigo, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+
+                <h2>8. Contacto</h2>
+                <p>Para cualquier consulta relacionada con este Aviso Legal, puede contactar con nosotros a través de:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a></li>
+                    <li><strong>Teléfono:</strong> <a href="tel:659866015">659 866 015</a></li>
+                    <li><strong>Dirección:</strong> Plaza de Compostela, 23 2º Dcha, 36201 Vigo, Pontevedra</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/gesoft.png" alt="Gesoft" class="footer-logo">
+                    <p>Innovación, Tecnología y Estrategia</p>
+                    <p><a href="mailto:soporte@gesoft.es">soporte@gesoft.es</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Dirección</h4>
+                    <p>Plaza de Compostela, 23 2º Dcha</p>
+                    <p>36201 Vigo, Pontevedra</p>
+                    <p>España</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a>
+                    <a href="tel:659866015">659 866 015</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <a href="politica-privacidad.html">Política de Privacidad</a>
+                    <a href="condiciones-uso.html">Condiciones de Uso</a>
+                    <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GESOFT | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

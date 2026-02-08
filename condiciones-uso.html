@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condiciones de Uso - Gesoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Salesforce+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sf-blue: #0176D3;
+            --sf-blue-dark: #014486;
+            --white: #FFFFFF;
+            --gray-10: #FAFAF9;
+            --gray-20: #F3F2F2;
+            --gray-30: #ECEBEA;
+            --gray-40: #C9C7C5;
+            --gray-60: #706E6B;
+            --gray-80: #3E3E3C;
+            --gray-100: #181818;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Salesforce Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--gray-100);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-30);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-80);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sf-blue);
+        }
+
+        .nav-cta {
+            background: var(--sf-blue);
+            color: var(--white) !important;
+            padding: 0.625rem 1.25rem !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .legal-content {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--gray-10) 0%, var(--white) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-header p {
+            color: var(--gray-60);
+            font-size: 1rem;
+        }
+
+        .legal-body {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-body h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-100);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sf-blue);
+        }
+
+        .legal-body h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-80);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .legal-body p {
+            color: var(--gray-60);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .legal-body ul, .legal-body ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gray-60);
+        }
+
+        .legal-body li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .legal-body strong {
+            color: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .legal-body a {
+            color: var(--sf-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .legal-body a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: var(--gray-10);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--sf-blue);
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: rgba(255, 154, 60, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid #FF9A3C;
+            margin: 1.5rem 0;
+        }
+
+        footer {
+            background: var(--gray-100);
+            color: var(--gray-40);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-40);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-80);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-body {
+                padding: 2rem 1.5rem;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/gesoft.png" alt="Gesoft"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#contacto" class="nav-cta">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="legal-content">
+        <div class="container">
+            <div class="legal-header">
+                <h1>Condiciones de Uso de la Web</h1>
+                <p>Normas de uso y política de cookies</p>
+            </div>
+
+            <div class="legal-body">
+                <p>Las presentes Condiciones Generales de Uso regulan el acceso y la utilización del sitio web <strong>gesoft.es</strong>, del que es titular GESOFT - Gestión de Software S.L.</p>
+
+                <h2>1. Aceptación de las Condiciones</h2>
+                <p>El acceso y uso de este sitio web implica la aceptación expresa y sin reservas de las presentes Condiciones de Uso. Si no está de acuerdo con alguna de ellas, le rogamos que no utilice este sitio web.</p>
+                <p>GESOFT se reserva el derecho de modificar estas condiciones en cualquier momento. Le recomendamos revisar periódicamente esta página para estar al tanto de posibles cambios.</p>
+
+                <h2>2. Objeto</h2>
+                <p>El sitio web gesoft.es tiene como objeto:</p>
+                <ul>
+                    <li>Proporcionar información sobre GESOFT, sus servicios y productos</li>
+                    <li>Facilitar el contacto entre usuarios y GESOFT</li>
+                    <li>Ofrecer contenidos informativos relacionados con el sector tecnológico</li>
+                    <li>Permitir la contratación de productos y servicios</li>
+                </ul>
+
+                <h2>3. Condiciones de Acceso y Uso</h2>
+                <h3>3.1. Carácter Gratuito</h3>
+                <p>El acceso al sitio web tiene carácter gratuito para los usuarios, salvo en lo relativo al coste de conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso contratado.</p>
+
+                <h3>3.2. Uso Adecuado</h3>
+                <p>El usuario se compromete a utilizar el sitio web de conformidad con la ley y estas Condiciones de Uso. El usuario se obliga a abstenerse de utilizar el sitio web con fines o efectos ilícitos o contrarios al contenido de estas Condiciones de Uso, lesivos de los intereses o derechos de terceros.</p>
+
+                <h3>3.3. Prohibiciones</h3>
+                <p>Queda expresamente prohibido:</p>
+                <ul>
+                    <li>Realizar actos que puedan dañar, inutilizar o sobrecargar el sitio web o impedir su normal utilización</li>
+                    <li>Introducir o difundir virus informáticos o cualquier otro sistema que pueda causar daños</li>
+                    <li>Intentar acceder a áreas restringidas del sitio web</li>
+                    <li>Reproducir, copiar, distribuir o permitir el acceso público a través de cualquier modalidad de comunicación pública, sin autorización previa</li>
+                    <li>Suprimir, eludir o manipular el copyright y demás datos identificativos de los derechos de GESOFT</li>
+                    <li>Utilizar el sitio web para difundir contenidos violentos, obscenos, pornográficos, racistas o xenófobos</li>
+                </ul>
+
+                <h2>4. Contenidos</h2>
+                <h3>4.1. Calidad y Actualización</h3>
+                <p>GESOFT se esfuerza por mantener la información del sitio web actualizada y precisa. Sin embargo, no garantiza la ausencia de errores ni la actualización constante de los contenidos.</p>
+
+                <h3>4.2. Modificación de Contenidos</h3>
+                <p>GESOFT se reserva el derecho a modificar, suspender o cancelar cualquier aspecto del sitio web, incluidos los contenidos, sin previo aviso.</p>
+
+                <h2>5. Enlaces Externos</h2>
+                <p>Este sitio web puede contener enlaces a sitios web de terceros. GESOFT no asume responsabilidad alguna sobre:</p>
+                <ul>
+                    <li>El funcionamiento de sitios web enlazados</li>
+                    <li>La disponibilidad de dichos sitios</li>
+                    <li>Los contenidos, servicios o productos ofrecidos en los mismos</li>
+                    <li>Las políticas de privacidad de terceros</li>
+                </ul>
+                <p>La inclusión de enlaces no implica la recomendación, aprobación o respaldo de GESOFT sobre los mismos.</p>
+
+                <h2>6. Exclusión de Garantías y Responsabilidad</h2>
+                
+                <h3>6.1. Disponibilidad</h3>
+                <p>GESOFT no garantiza la disponibilidad continua del sitio web. No será responsable de interrupciones del servicio, errores, fallos de funcionamiento o pérdida de datos.</p>
+
+                <h3>6.2. Virus</h3>
+                <p>GESOFT adopta medidas de seguridad razonables, pero no puede garantizar la ausencia total de virus u otros elementos dañinos en el sitio web.</p>
+
+                <h3>6.3. Exactitud</h3>
+                <p>GESOFT no garantiza la exactitud, veracidad o actualización de los contenidos del sitio web y se reserva el derecho a modificarlos sin previo aviso.</p>
+
+                <h2 id="cookies">7. Política de Cookies</h2>
+                <p>Este sitio web utiliza cookies propias y de terceros para mejorar nuestros servicios y su experiencia de navegación.</p>
+
+                <h3>7.1. ¿Qué son las Cookies?</h3>
+                <p>Las cookies son archivos que se descargan en su ordenador, smartphone o tablet al acceder a determinadas páginas web. Las cookies permiten, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo.</p>
+
+                <h3>7.2. Tipos de Cookies que Utilizamos</h3>
+                
+                <h4>Cookies Técnicas (Necesarias)</h4>
+                <p>Son imprescindibles para el correcto funcionamiento del sitio web. Permiten la navegación y utilización de las diferentes opciones.</p>
+
+                <h4>Cookies de Personalización</h4>
+                <p>Permiten recordar información para que el usuario acceda al servicio con determinadas características (idioma, región, etc.).</p>
+
+                <h4>Cookies de Análisis</h4>
+                <p>Permiten el seguimiento y análisis del comportamiento de los usuarios. La información recogida se utiliza para medir la actividad y elaborar perfiles de navegación.</p>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Analiza el uso del sitio web</li>
+                    <li>Duración: 2 años</li>
+                    <li>Más información: <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a></li>
+                </ul>
+
+                <h4>Cookies Publicitarias</h4>
+                <p>Permiten gestionar de forma eficaz los espacios publicitarios del sitio web y personalizar los anuncios mostrados.</p>
+
+                <h3>7.3. Gestión de Cookies</h3>
+                <p>Puede aceptar, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones de su navegador:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
+                    <li><strong>Firefox:</strong> Preferencias → Privacidad y Seguridad → Cookies</li>
+                    <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies</li>
+                    <li><strong>Edge:</strong> Configuración → Cookies y permisos de sitio</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Importante:</strong> La desactivación de cookies puede impedir el correcto funcionamiento de algunas funcionalidades del sitio web.</p>
+                </div>
+
+                <h3>7.4. Consentimiento</h3>
+                <p>Al navegar y continuar en nuestro sitio web estará consintiendo el uso de las cookies antes enunciadas, por los plazos señalados y en las condiciones contenidas en esta Política de Cookies.</p>
+
+                <h2>8. Propiedad Intelectual e Industrial</h2>
+                <p>Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, código fuente, etc.) son propiedad de GESOFT o de terceros que han autorizado su uso.</p>
+                <p>Quedan reservados todos los derechos de propiedad intelectual e industrial. El usuario únicamente tiene derecho a un uso privado de los contenidos, quedando prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa.</p>
+
+                <h2>9. Protección de Datos</h2>
+                <p>Los datos personales recabados a través de este sitio web serán tratados conforme a nuestra <a href="politica-privacidad.html">Política de Privacidad</a>.</p>
+
+                <h2>10. Menores de Edad</h2>
+                <p>El uso de este sitio web está destinado a mayores de 14 años. Los menores de 14 años necesitan el consentimiento de sus padres o tutores para facilitar datos personales.</p>
+
+                <h2>11. Legislación Aplicable y Jurisdicción</h2>
+                <p>Las presentes Condiciones de Uso se rigen por la legislación española. Para la resolución de cualquier controversia, las partes se someten expresamente a los Juzgados y Tribunales de Vigo, salvo que la normativa aplicable establezca otra jurisdicción.</p>
+
+                <h2>12. Contacto</h2>
+                <p>Para cualquier consulta sobre estas Condiciones de Uso o sobre el funcionamiento del sitio web, puede contactar con nosotros:</p>
+                <div class="info-box">
+                    <p><strong>Email:</strong> <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a></p>
+                    <p><strong>Teléfono:</strong> 659 866 015</p>
+                    <p><strong>Dirección:</strong> Plaza de Compostela, 23 2º Dcha, 36201 Vigo, Pontevedra</p>
+                    <p><strong>Delegado de Protección de Datos:</strong> <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a></p>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>📅 Última actualización:</strong> Febrero 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/gesoft.png" alt="Gesoft" class="footer-logo">
+                    <p>Innovación, Tecnología y Estrategia</p>
+                    <p><a href="mailto:soporte@gesoft.es">soporte@gesoft.es</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Dirección</h4>
+                    <p>Plaza de Compostela, 23 2º Dcha</p>
+                    <p>36201 Vigo, Pontevedra</p>
+                    <p>España</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a>
+                    <a href="tel:659866015">659 866 015</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <a href="politica-privacidad.html">Política de Privacidad</a>
+                    <a href="condiciones-uso.html">Condiciones de Uso</a>
+                    <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GESOFT | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

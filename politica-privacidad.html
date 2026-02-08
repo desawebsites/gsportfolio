@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Gesoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Salesforce+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sf-blue: #0176D3;
+            --sf-blue-dark: #014486;
+            --white: #FFFFFF;
+            --gray-10: #FAFAF9;
+            --gray-20: #F3F2F2;
+            --gray-30: #ECEBEA;
+            --gray-40: #C9C7C5;
+            --gray-60: #706E6B;
+            --gray-80: #3E3E3C;
+            --gray-100: #181818;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Salesforce Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--gray-100);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-30);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-80);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sf-blue);
+        }
+
+        .nav-cta {
+            background: var(--sf-blue);
+            color: var(--white) !important;
+            padding: 0.625rem 1.25rem !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .legal-content {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--gray-10) 0%, var(--white) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-header p {
+            color: var(--gray-60);
+            font-size: 1rem;
+        }
+
+        .legal-body {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-body h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-100);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sf-blue);
+        }
+
+        .legal-body h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-80);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .legal-body p {
+            color: var(--gray-60);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .legal-body ul, .legal-body ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gray-60);
+        }
+
+        .legal-body li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .legal-body strong {
+            color: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .legal-body a {
+            color: var(--sf-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .legal-body a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: var(--gray-10);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--sf-blue);
+            margin: 1.5rem 0;
+        }
+
+        .alert-box {
+            background: rgba(1, 118, 211, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--sf-blue);
+            margin: 1.5rem 0;
+        }
+
+        footer {
+            background: var(--gray-100);
+            color: var(--gray-40);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-40);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-80);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-body {
+                padding: 2rem 1.5rem;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/gesoft.png" alt="Gesoft"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#contacto" class="nav-cta">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="legal-content">
+        <div class="container">
+            <div class="legal-header">
+                <h1>Política de Privacidad</h1>
+                <p>Conforme al Reglamento General de Protección de Datos (RGPD)</p>
+            </div>
+
+            <div class="legal-body">
+                <div class="alert-box">
+                    <p><strong>📋 Información importante:</strong> GESOFT cumple con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas (RGPD), así como con la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).</p>
+                </div>
+
+                <h2>1. Responsable del Tratamiento</h2>
+                <div class="info-box">
+                    <p><strong>Identidad:</strong> GESOFT - Gestión de Software S.L.</p>
+                    <p><strong>CIF:</strong> B36483320</p>
+                    <p><strong>Dirección:</strong> Plaza de Compostela, 23 2º Dcha, 36201 Vigo, Pontevedra</p>
+                    <p><strong>Email:</strong> <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a></p>
+                    <p><strong>Teléfono:</strong> 659 866 015</p>
+                    <p><strong>Delegado de Protección de Datos:</strong> <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a></p>
+                </div>
+
+                <h2>2. Datos Personales que Recogemos</h2>
+                <p>Podemos recoger y tratar los siguientes tipos de datos personales:</p>
+                <ul>
+                    <li><strong>Datos de identificación:</strong> Nombre, apellidos, DNI/NIF, fotografía</li>
+                    <li><strong>Datos de contacto:</strong> Dirección postal, email, teléfono</li>
+                    <li><strong>Datos profesionales:</strong> Empresa, cargo, sector de actividad</li>
+                    <li><strong>Datos de navegación:</strong> Dirección IP, cookies, datos de tráfico, localización</li>
+                    <li><strong>Datos comerciales:</strong> Historial de compras, preferencias de productos/servicios</li>
+                </ul>
+
+                <h2>3. Finalidades del Tratamiento</h2>
+                <h3>3.1. Gestión de Servicios</h3>
+                <ul>
+                    <li>Prestación de servicios contratados</li>
+                    <li>Gestión de pedidos y facturación</li>
+                    <li>Atención de consultas y reclamaciones</li>
+                    <li>Soporte técnico</li>
+                </ul>
+
+                <h3>3.2. Comunicaciones Comerciales</h3>
+                <ul>
+                    <li>Envío de newsletters y comunicaciones sobre productos y servicios</li>
+                    <li>Información sobre eventos, promociones y novedades</li>
+                    <li>Encuestas de satisfacción</li>
+                </ul>
+
+                <h3>3.3. Análisis y Mejora</h3>
+                <ul>
+                    <li>Análisis del comportamiento de navegación</li>
+                    <li>Mejora de nuestros servicios y web</li>
+                    <li>Estudios de mercado</li>
+                </ul>
+
+                <h2>4. Base Legal del Tratamiento</h2>
+                <p>El tratamiento de sus datos se basa en:</p>
+                <ul>
+                    <li><strong>Ejecución de contrato:</strong> Para la prestación de servicios solicitados</li>
+                    <li><strong>Consentimiento del interesado:</strong> Para comunicaciones comerciales y uso de cookies</li>
+                    <li><strong>Interés legítimo:</strong> Para mejora de servicios y seguridad</li>
+                    <li><strong>Obligación legal:</strong> Para cumplimiento de normativa fiscal y mercantil</li>
+                </ul>
+
+                <h2>5. Conservación de Datos</h2>
+                <p>Conservaremos sus datos personales:</p>
+                <ul>
+                    <li><strong>Datos contractuales:</strong> Durante la vigencia del contrato y hasta 6 años después para obligaciones legales</li>
+                    <li><strong>Datos comerciales:</strong> Hasta que solicite la baja o retire su consentimiento</li>
+                    <li><strong>Datos de navegación:</strong> Según lo establecido en nuestra Política de Cookies</li>
+                </ul>
+
+                <h2>6. Destinatarios de los Datos</h2>
+                <p>Sus datos podrán ser comunicados a:</p>
+                <ul>
+                    <li><strong>Administraciones Públicas:</strong> Cuando exista obligación legal (AEAT, Seguridad Social)</li>
+                    <li><strong>Proveedores de servicios:</strong> Hosting, servicios cloud, plataformas de pago, servicios de mensajería</li>
+                    <li><strong>Entidades financieras:</strong> Para gestión de pagos</li>
+                    <li><strong>Asesores y consultores:</strong> Legales, fiscales y contables</li>
+                </ul>
+                <p>Todos nuestros proveedores cumplen con el RGPD y tienen firmados acuerdos de confidencialidad.</p>
+
+                <h2>7. Transferencias Internacionales</h2>
+                <p>En caso de realizar transferencias internacionales de datos, nos aseguraremos de que:</p>
+                <ul>
+                    <li>El país destinatario tenga un nivel de protección adecuado según la Comisión Europea</li>
+                    <li>Se apliquen las cláusulas contractuales tipo aprobadas por la Comisión Europea</li>
+                    <li>Existan garantías adecuadas conforme al RGPD</li>
+                </ul>
+
+                <h2>8. Derechos de los Interesados</h2>
+                <p>Puede ejercer los siguientes derechos:</p>
+                
+                <h3>8.1. Derecho de Acceso</h3>
+                <p>Obtener información sobre si estamos tratando sus datos personales y, en su caso, cuáles.</p>
+
+                <h3>8.2. Derecho de Rectificación</h3>
+                <p>Solicitar la corrección de datos inexactos o incompletos.</p>
+
+                <h3>8.3. Derecho de Supresión ("Derecho al Olvido")</h3>
+                <p>Solicitar la eliminación de sus datos cuando ya no sean necesarios o retire su consentimiento.</p>
+
+                <h3>8.4. Derecho de Oposición</h3>
+                <p>Oponerse al tratamiento de sus datos para determinadas finalidades.</p>
+
+                <h3>8.5. Derecho a la Limitación del Tratamiento</h3>
+                <p>Solicitar que se restrinja el tratamiento en determinados casos.</p>
+
+                <h3>8.6. Derecho a la Portabilidad</h3>
+                <p>Recibir sus datos en formato estructurado y transmitirlos a otro responsable.</p>
+
+                <h3>8.7. Derecho a Retirar el Consentimiento</h3>
+                <p>Retirar el consentimiento en cualquier momento cuando el tratamiento se base en él.</p>
+
+                <h3>8.8. Derecho a Reclamar</h3>
+                <p>Presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank">www.aepd.es</a>).</p>
+
+                <div class="info-box">
+                    <p><strong>¿Cómo ejercer sus derechos?</strong></p>
+                    <p>Puede ejercer sus derechos enviando un correo a <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a> o mediante carta postal a nuestra dirección, adjuntando copia de su DNI o documento identificativo equivalente.</p>
+                </div>
+
+                <h2>9. Medidas de Seguridad</h2>
+                <p>Hemos adoptado medidas técnicas y organizativas apropiadas para garantizar la seguridad de sus datos personales:</p>
+                <ul>
+                    <li>Cifrado de datos mediante SSL/TLS</li>
+                    <li>Controles de acceso y autenticación</li>
+                    <li>Copias de seguridad periódicas</li>
+                    <li>Formación del personal en protección de datos</li>
+                    <li>Auditorías de seguridad regulares</li>
+                    <li>Protección contra malware y virus</li>
+                </ul>
+
+                <h2>10. Menores de Edad</h2>
+                <p>Nuestros servicios no están dirigidos a menores de 14 años. No recopilamos intencionadamente datos de menores. Si detectamos que un menor ha proporcionado datos sin autorización parental, procederemos a su eliminación.</p>
+
+                <h2>11. Cookies</h2>
+                <p>Este sitio web utiliza cookies. Para más información, consulte nuestra <a href="condiciones-uso.html#cookies">Política de Cookies</a>.</p>
+
+                <h2>12. Actualizaciones</h2>
+                <p>Nos reservamos el derecho a modificar esta Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o de interpretación de la Agencia Española de Protección de Datos. Le notificaremos de cualquier cambio relevante.</p>
+
+                <h2>13. Contacto</h2>
+                <p>Para cualquier consulta sobre esta Política de Privacidad o sobre el tratamiento de sus datos personales, puede contactar con:</p>
+                <ul>
+                    <li><strong>Delegado de Protección de Datos:</strong> <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a></li>
+                    <li><strong>Email general:</strong> <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a></li>
+                    <li><strong>Teléfono:</strong> 659 866 015</li>
+                    <li><strong>Dirección:</strong> Plaza de Compostela, 23 2º Dcha, 36201 Vigo, Pontevedra</li>
+                </ul>
+
+                <div class="alert-box">
+                    <p><strong>📅 Última actualización:</strong> Febrero 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/gesoft.png" alt="Gesoft" class="footer-logo">
+                    <p>Innovación, Tecnología y Estrategia</p>
+                    <p><a href="mailto:soporte@gesoft.es">soporte@gesoft.es</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Dirección</h4>
+                    <p>Plaza de Compostela, 23 2º Dcha</p>
+                    <p>36201 Vigo, Pontevedra</p>
+                    <p>España</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:comercial@gesoft.es">comercial@gesoft.es</a>
+                    <a href="tel:659866015">659 866 015</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <a href="politica-privacidad.html">Política de Privacidad</a>
+                    <a href="condiciones-uso.html">Condiciones de Uso</a>
+                    <a href="mailto:dpd@gesoft.es">dpd@gesoft.es</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GESOFT | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
